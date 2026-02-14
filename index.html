@@ -1,32 +1,29 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #ffffff;
-        }
-        .container {
-            text-align: center;
-            padding: 2rem;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Billiard Online Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Hello World</h1>
-        <p>Welcome to your new web application.</p>
+    <div id="game-container">
+        <div id="overlay">
+            <h1 style="letter-spacing: 4px; margin-bottom: 10px;">POOL ONLINE</h1>
+            <p style="color: #aaa; margin-bottom: 30px;">Challenge a friend or practice alone</p>
+            <div id="setup-box">
+                <input type="text" id="room-input" placeholder="ROOM CODE" maxlength="6">
+                <div>
+                    <button id="host-btn" class="btn">CREATE</button>
+                    <button id="join-btn" class="btn">JOIN</button>
+                    <button id="single-btn" class="btn">SINGLE</button>
+                </div>
+                <p id="conn-status" style="color: #666; margin-top: 20px; font-size: 0.9rem;">Use the same code to connect</p>
+            </div>
+        </div>
+        <canvas id="poolTable"></canvas>
     </div>
+    <script src="game.js"></script>
 </body>
 </html>
